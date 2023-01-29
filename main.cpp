@@ -6,32 +6,19 @@ T USD(T val,T usd)
 {
 	return val / usd;
 }
-//double USD(int val, double usd)
-//{
-//	return val / usd;
-//}
-//double USD(double val, double usd)
-//{
-//	return val / usd;
-//}
+
 template<typename T>
 T EUR(T val, T eur)
 {
 	return val / eur;
 }
-//double EUR(double val, double eur)
-//{
-//	return val / eur;
-//}
+
 template<typename T>
 T PLN(T val, T pln)
 {
 	return val / pln;
 }
-//double PLN(double val, double pln)
-//{
-//	return val / pln;
-//}
+
 
 
 int main()
