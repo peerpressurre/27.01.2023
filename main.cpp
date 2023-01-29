@@ -48,10 +48,11 @@ int main()
 	cout << "Enter GRN-> ";
 	cin >> val;
 
-	cout << "Choose currency to convert to-> ";
 	cout << "USD -> 1 " << endl;
 	cout << "EUR -> 2 " << endl;
 	cout << "PLN -> 3 " << endl;
+	cout << "Choose currency to convert to:" << endl;
+	cout << "-> ";
 	cin >> currency;
 	system("cls");
 	switch (currency)
