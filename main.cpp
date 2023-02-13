@@ -5,11 +5,12 @@ using namespace std;
 
 int main()
 {
-	int num;
+	/*int num;
 	cout << "-> ";
-	cin >> num;
-	int sum = num;
-	for (int i = num; i != 0;)
+	cin >> num;*/
+	int sum = 0;
+	cout << "Enter numbers: " << endl;
+	for (int i = 1; i != 0;)
 	{
 		cout << "-> ";
 		cin >> i;
