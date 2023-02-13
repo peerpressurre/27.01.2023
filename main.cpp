@@ -1,26 +1,25 @@
-#define _CRT_SECURE_NO_WARNINGS
-
-#include <iostream>
 #include <iomanip>
 #include <stdlib.h>
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <ctime>
 #include <chrono>
+
 using namespace std;
 using namespace std::chrono;
+
 int main()
 {
     srand(time(0));
     unsigned short user_number, rand_number = rand() % 500;
     unsigned long long try_count = 0;
-    time_t start, end, total;
     cout << rand_number << endl;
+    std::chrono::system_clock::time_point start, end, total;
     do {
         if (try_count == 0)
         {
             //start = time(0); 
-            start = system_clock::to_time_t(system_clock::now());
+            start = chrono::system_clock::now();
         }
         // convert now to string form 
         try_count++;
@@ -40,17 +39,16 @@ int main()
         else if (user_number == rand_number)
         {
             system("cls");
-            end = system_clock::to_time_t(system_clock::now());
-            tm* s_tm = localtime(&start);
-            tm* e_tm = localtime(&end);
-            tm* t_tm = localtime(&total);
-            std::chrono::duration<double> elapsed_seconds = end - start;
-            std::cout << "Elapsed Time: " << elapsed_seconds.count() << " sec" << std::endl;
+            end = chrono::system_clock::now();
+
+            auto elapsed_seconds = chrono::duration_cast<chrono::seconds>(end - start).count();
+
+            cout << "Elapsed Time: " << elapsed_seconds << " sec" << std::endl;
             cout << "#>--------<WIN>-----------#" << endl;
-            cout << "| Try count =" << try_count << endl;
-            cout << "| Time start =" << ctime(&start) << endl;
-            cout << "| Time end =" << ctime(&end) << endl;
-            cout << "| Total time =" << ctime(&total) << endl;
+            cout << "| Try count = " << try_count << endl;
+            cout << "| Time start = " << std::chrono::system_clock::to_time_t(start) << endl;
+            cout << "| Time end = " << std::chrono::system_clock::to_time_t(end) << endl;
+            cout << "| Total time = " << std::chrono::system_clock::to_time_t(total) << endl;
             cout << "#>------------------------#" << endl;
             exit(0);
         }
