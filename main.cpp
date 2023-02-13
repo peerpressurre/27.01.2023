@@ -5,11 +5,7 @@ using namespace std;
 
 int main()
 {
-	int num1, num2, temp, sum = 0;
-	const int size = 1000;
-	int evens[size];
-	int odds[size];
-	int seven[size];
+	int num1, num2, temp;
 	cout << "Enter first number-> ";
 	cin >> num1;
 	cout << "Enter second number-> ";
@@ -21,53 +17,37 @@ int main()
 		num2 = temp;
 	}
 
-	for (int i = 0, j = num1; j < num2; i++)
+	for (size_t i = num1; i < num2 + 1; i++)
 	{
-		if (j % 2 == 0)
-		{
-			evens[i] = j;
-			j++;
-		}
-		if (j % 2 != 0)
-		{
-			odds[i] = j;
-			j++;
-		}
-		if (j % 7 == 0)
-		{
-			seven[i] = j;
-			j++;
-		}
+		cout << i << "\t";
 	}
-
-	cout << "----------------------------------------------------" << endl;
-	cout << "Even numbers: ";
-	for (int i = 0; i < num2 + 1; i++)
+	cout << endl;
+	cout << endl;
+	cout << "Even numbers:\t";
+	for (size_t i = num1; i < num2+1; i++)
 	{
-		if (evens[i] != -858993460)
+		if (i % 2 == 0)
 		{
-			cout << evens[i] << "  ";
-
+			cout << i << "\t";
 		}
 	}
 	cout << endl;
-	cout << "Odd numbers: ";
-	for (int i = 0; i < num2 + 1; i++)
+	cout << "Odd numbers:\t";
+	for (size_t i = num1; i < num2 + 1; i++)
 	{
-		if (odds[i] != -858993460)
+		if (i % 2 != 0)
 		{
-			cout << odds[i] << "  ";
-
+			cout << i << "\t";
 		}
 	}
 	cout << endl;
-	cout << "Numbers multiple by seven: ";
-	for (int i = 0; i < num2 + 1; i++)
+	
+	cout << "Numbers multiple by seven:\t";
+	for (int i = num1; i < num2 + 1; i++)
 	{
-		if (seven[i] != -858993460) // -858993460 
+		if ( i != -858993460 & i % 7 == 0) // -858993460 
 		{
-			cout << seven[i] << "  ";
-
+			cout << i << "\t";
 		}
 	}
 
