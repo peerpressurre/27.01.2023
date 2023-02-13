@@ -27,9 +27,9 @@ int main()
 	double val, usd = 39.7540, eur = 42.87690, pln = 8.6383;
 
 	cout << "------------MENU------------" << endl;
-	cout << "|----USD----------39.7540--|" << endl;
-	cout << "|----EUR----------42.87690-|" << endl;
-	cout << "|----PLN----------8.6383---|" << endl;
+	cout << "|    USD          39.754   |" << endl;
+	cout << "|    EUR          42.876   |" << endl;
+	cout << "|    PLN          8.6384   |" << endl;
 	cout << "----------------------------" << endl;
 
 	cout << "Enter GRN-> ";
@@ -38,7 +38,7 @@ int main()
 	cout << "USD -> 1 " << endl;
 	cout << "EUR -> 2 " << endl;
 	cout << "PLN -> 3 " << endl;
-	cout << "Choose currency to convert to:" << endl;
+	cout << "Choose currency to convert to ";
 	cout << "-> ";
 	cin >> currency;
 	system("cls");
